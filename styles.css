@@ -1,0 +1,273 @@
+/* =========================
+   Reset & Base Styles
+========================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #1a001a, #000);
+    color: #9e3f77;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
+}
+
+a {
+    color: #bd3e90;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px #ff49c0;
+}
+
+/* =========================
+   Container & Layout
+========================= */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   Sidebar
+========================= */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1a000d;
+    border-right: 1px solid rgba(255,73,192,0.2);
+    padding: 20px;
+    position: fixed;
+    transition: all 0.3s ease;
+}
+
+.sidebar h2 {
+    color: #ff49c0;
+    text-shadow: 0 0 8px #ff49c0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: #d3a0d3;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    color: #ff49c0;
+    text-shadow: 0 0 5px #ff49c0;
+    font-weight: bold;
+}
+
+#darkModeBtn {
+    margin-top: 20px;
+    padding: 10px;
+    background: linear-gradient(135deg, #ff49c0, #ff77d1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#darkModeBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff49c0;
+}
+
+/* =========================
+   Content
+========================= */
+.content {
+    margin-left: 270px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+/* =========================
+   Profile Section
+========================= */
+.profile-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.profile-box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff49c0;
+    box-shadow: 0 0 15px #ff49c0;
+}
+
+.profile-text h1,
+.profile-text h2,
+.profile-text p {
+    margin: 5px 0;
+}
+
+/* =========================
+   Cards
+========================= */
+.card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid rgba(255,73,192,0.2);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #ff49c0;
+}
+
+/* =========================
+   Inputs & Forms
+========================= */
+input, textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    color: #f8f0f8;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #ff49c0;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(135deg, #ff49c0, #ff77d1);
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ff49c0;
+}
+
+/* =========================
+   Skills
+========================= */
+#skillList li {
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+#skillList li strong {
+    color: #ff49c0;
+}
+
+/* =========================
+   Projects / Portfolio
+========================= */
+.projectBox, .portfolio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.projectBox .project-item, .portfolio-links .card {
+    flex: 1 1 calc(50% - 15px);
+    min-width: 250px;
+}
+
+/* =========================
+   Dark Mode
+========================= */
+.dark {
+    --bg: #f8f8f8;
+    --text: #1a001a;
+    --card: #fff0f8;
+}
+
+.dark body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.dark .sidebar {
+    background: #fff0f8;
+}
+
+.dark .sidebar a {
+    color: #1a001a;
+}
+
+.dark .sidebar a:hover,
+.dark .sidebar a.active {
+    color: #ff49c0;
+    text-shadow: none;
+}
+
+.dark .card {
+    background: var(--card);
+    border: 1px solid rgba(255,73,192,0.2);
+}
+
+.dark input, .dark textarea {
+    background: #fff;
+    color: #1a001a;
+}
+
+.dark button {
+    background: linear-gradient(135deg, #ff49c0, #ff77d1);
+    color: black;
+}
+
+/* =========================
+   Hidden Utility
+========================= */
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+   Animations
+========================= */
+section, .card, .project-item {
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Responsive
+========================= */
+@media screen and (max-width: 900px) {
+    .container { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: relative; }
+    .content { margin-left: 0; padding: 20px; }
+    .projectBox .project-item, .portfolio-links .card { flex: 1 1 100%; }
+    .profile-box { flex-direction: column; text-align: center; }
+    .profile-box img { margin-bottom: 10px; }
+}
